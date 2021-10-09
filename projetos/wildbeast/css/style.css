@@ -1,0 +1,415 @@
+body, p, h1, ul, li, blockquote {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Volkorn", Georgia, serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+}
+
+/*GRID GERAL*/
+
+.estrutura {
+    /* 
+        Este código abaixo irá informar ao site que a estrutura agora é de display grid e está pronta para
+        receber as manipulações aceitas por elementos do tipo grid.
+    */
+    display: grid;
+
+    /* 
+        Este código abaixo determinará tamanhos para três colunas, dá para perceber que haverá três colunas pela separação 
+        com espaço, por exemplo a primeira coluna "minmax(160px, 1fr)" segunda "3fr" e terceira "300px".
+
+        É notorio dizer que, por se tratar de coluna, a unidade de medida escolhida determinará o tamanho horizontal (eixo x),
+        ou seja, a largura do elemento (width).
+        
+        E pra explicar melhor a primeira coluna terá no mínimo 160px e no máximo 1fr, ou seja, ela terá um tamanho mínimo para
+        se comprimir/diminuir e um tamanho máximo para expandir/aumentar, que é de 1fr, ou seja uma fração do tamanho total 
+        do elemento que a coluna está contida.
+
+        A segunda coluna já ocupará 3fr, ou seja, 3 frações do tamanho total do elemento que a coluna está contida.
+
+        E a terceira coluna já ocupará um tamanho fixo de 300px do tamanho total do elemento que a coluna está contida.
+    */
+    grid-template-columns: minmax(160px, 1fr) 3fr 300px;
+
+    /* 
+        Este código abaixo basicamente "desenhará" o alinhamento esperado dos conteúdos grid. Associando um nome 
+        para a área do grid. 
+
+        (header header header) que dizer que as três colunas da primeira linha será contida por três áreas associadas 
+        ao nome header, logo percebe-se que o espaço total da primeira linha pertence ao header.
+
+        (sidenav content anuncios) quer dizer que na segunda linha, cada coluna será continha por uma área associada diferente
+        primeira coluna é um espaço reservado para o sidenav, segunda coluna é um espaço reservado para o content e a última
+        coluna para os anuncios
+
+        (footer footer footer) tem o mesmo comportamento do (header header header), porém é uma atitura que ocorrerá na terceira
+        linha e com uma área associada ao nome footer.
+
+    */
+    grid-template-areas: 
+        "header header header"
+        "sidenav content anuncios"
+        "footer footer footer"
+    ;
+}
+
+@media (max-width: 1200px) {
+    .estrutura {
+        grid-template-areas: 
+            "header header header"
+            "sidenav content content"
+            "sidenav anuncios anuncios"
+            "footer footer footer"
+        ;
+    }
+}
+
+@media (max-width: 760px) {
+    .estrutura {
+        grid-template-columns: 100%;
+        grid-template-areas: 
+            "header"
+            "sidenav"
+            "content"
+            "anuncios"
+            "footer"
+        ;
+    }
+}
+
+/*HEADER*/
+
+.header {
+    /*
+        Este código abaixo está associando uma área do grid ao nome header, porém poderia ser qualquer nome/texto.
+        O importante é está relacionado ao mesmo nome utilizado no código acima (grid-template-areas), pois se não estiver
+        o comportamento não será o esperado.
+    */
+    grid-area: header;
+    background: linear-gradient(135deg, #8844ee, #B07DFB);
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.logo{
+    max-width: 200px;
+}
+
+.header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header nav a {
+    display: block;
+    padding: 10px;
+    color: white;
+    font-size: 1.125em;
+    background: rgba(0,0,0,.1);
+    border-radius: 5px;
+    transition: .1s;
+}
+
+.header nav a:hover {
+    background: rgba(0,0,0,.5);
+}
+
+.header li + li {
+    margin-left: 30px;
+}
+
+@media (max-width: 760px){
+    .header {
+        grid-template-columns: auto;
+    }
+
+    .logo{
+        margin-bottom: 20px;
+    }
+
+    .header nav a {
+        font-size: 1em;
+    }
+
+    .header li + li {
+        margin-left: 10px;
+    }
+}
+
+/*SIDENAV*/
+
+.sidenav {
+    grid-area: sidenav;
+    background: #fafbfc;
+    padding: 30px;
+}
+
+.sidenav li a {
+    display: block;
+    min-width: 60px;
+    max-width: 100px;
+    margin: 0 auto 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.15);
+    transition: .1s ease-out;
+}
+
+.sidenav li a:hover {
+    background: #B07DFB;
+}
+
+@keyframes seta{
+    from {
+        right: 30px;
+    }to {
+        right: 20px;
+    }
+}
+
+@media (max-width: 760px){
+    .sidenav {
+        position: relative;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    .sidenav::after{
+        position: absolute;
+        content: "→";
+        top: 5px;
+        right: 30px;
+        color: rgba(0,0,0,.3);
+        animation: seta .5s ease-in 0s infinite alternate;
+    }
+
+    .sidenav ul {
+        display: flex;
+    }
+
+    .sidenav li {
+        flex: 1 0 60px;
+    }
+
+    .sidenav {
+        padding: 0 30px;
+    }
+
+    .sidenav li a {
+        margin: 30px 30px 30px 0;
+    }
+}
+
+/*CONTENT*/
+.content {
+    grid-area: content;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+
+@media (max-width: 600px){
+    .content{
+        grid-template-columns: auto;
+    }
+}
+
+.col-wide {
+    /*
+        O código abaixo define que os itens iniciarão na primeira linha da coluna um e expandirá até o máximo colocando -1.
+    */
+    grid-column: 1 / -1;
+}
+
+.imagem-1{
+    /*
+        O código abaixo define que o item grid em específico terá seu tamanho expandido para duas linhas a mais
+        na posição em que ele já se encontra, se por ventura ele inicia na linha 3 seu tamanho se expandirá até a linha 5.
+    */
+    grid-row: span 2;
+    /*
+        O código abaixo define que o item grid em específico terá seu posicionamento alinhado ao final.
+        Para ilustrar, da para se pensar em uma caixa com um tamanho de 50cm, 50x50.
+        Considerar que cada traço há 10cm
+
+        -10cm -10cm -10cm -10cm 10cm
+        -10cm -10cm -10cm -10cm 10cm
+        -10cm -10cm -10cm -10cm 10cm
+        -10cm -10cm -10cm -10cm 10cm
+        -10cm -10cm -10cm -10cm 10cm
+
+        O item em questão ocupa 20cm, tanto na horizontal como na vertical 20x20, iniciando na primeira linha e 
+        não primeira coluna, ficando assim:
+
+        # espaço do item
+
+        -#     -#   -10cm -10cm 10cm
+        -#     -#   -10cm -10cm 10cm
+        -10cm -10cm -10cm -10cm 10cm
+        -10cm -10cm -10cm -10cm 10cm
+        -10cm -10cm -10cm -10cm 10cm
+
+        ao alinhar como "end" o comportamento será assim: 
+
+        -10cm -10cm -10cm -10cm 10cm
+        -10cm -10cm -10cm -10cm 10cm
+        -10cm -10cm -10cm -10cm 10cm
+        -#     -#   -10cm -10cm 10cm
+        -#     -#   -10cm -10cm 10cm
+
+        Pois agora ele iniciará
+
+    */
+    align-self: end;
+}
+
+.item-2 {
+    align-self: end;
+}
+
+/*ESTILOS CONTENT*/
+
+p{
+    font-size: 1.2em;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+    color: rgba(0,0,0,0.7);
+}
+
+.informacoes p + p {
+    margin-top: 30px;
+}
+
+/*TITULO*/
+
+.titulo {
+    color: #B07DFB;
+}
+
+.titulo h1 {
+    font-size: 3.75em;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.titulo span {
+    font-size: 0.875em;
+    font-style: italic;
+}
+
+/*CARACTERISTICAS*/
+.caracteristicas {
+    display: flex;
+    align-items: flex-start;
+}
+
+.caracteristicas > div {
+    width: 80px;
+    text-align: center;
+    background: linear-gradient(135deg, #8844ee, #B07DFB);
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.15);
+    position: relative;
+}
+
+.caracteristicas > div:first-child{
+    margin-right: 30px;
+}
+
+.caracteristicas span {
+    display: block;
+    color: #B07DFB;
+}
+
+.numero {
+    font-size: 3em;
+    line-height: 1;
+    margin: 10px auto;
+}
+
+.rotulo {
+    background: white;
+    border-radius: 0 0 5px 5px;
+    padding: 5px 0;
+    position: relative;
+    top: 2px;
+}
+
+.destaque {
+    font-size: 0.875em;
+    color: #B07DFB;
+    max-width: 16em;
+}
+
+.citacao, .atributos {
+    align-self: start;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+    background: linear-gradient(135deg, #8844ee, #B07DFB);
+}
+
+.citacao p {
+    font-size: 1.5em;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.atributos li {
+    color: white;
+    font-family: Courier, monospace;
+    font-size: 1.125em;
+    padding: 15px;
+}
+
+.atributos li + li {
+    border-top: 2px solid #B07DFB;
+}
+/*ANUNCIOS*/
+.anuncios {
+    grid-area: anuncios;
+    background: #fafbfc;
+    display: grid;
+    align-content: start;
+    padding: 30px;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.footer {
+    grid-area: footer;
+    background: linear-gradient(135deg, #8844ee, #B07DFB);
+}
+
+.footer p {
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+

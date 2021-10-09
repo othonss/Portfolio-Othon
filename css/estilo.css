@@ -1,0 +1,701 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Comic Sans MS, Comic Sans, sans-serif;
+}
+
+@font-face {
+    font-family: "Quantify";
+    src: url(../fontes/Quantify.woff);
+}
+
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+a:hover {
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+/* -------------------------------------------- COMEÇO ESTRUTURA GERAL (header-main-footer) */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+/* -------------------------------------------- FIM ESTRUTURA GERAL (header-main-footer) */
+
+/* -------------------------------------------- COMEÇO CABEÇALHO */
+.navPrincipal {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.subNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3em;
+}
+
+#menu {
+    text-transform: uppercase;
+    margin: 0 auto;
+    width: 50%;
+    font-size: .9em;
+}
+
+#btnMobile {
+    display: none;
+}
+
+.subNav2 ul {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+
+.cabecalho{
+    padding: 0px 10px 0px 10px;
+    background: linear-gradient(180deg, #2f2a30, #554e56);
+    height: 4.5rem;
+}
+
+#logo{
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-family: "Quantify";
+}
+
+#logo span{
+    color: white;
+    font-family: "Quantify";
+}
+
+#logo:hover {
+    color: white;
+}
+/* -------------------------------------------- FIM CABEÇALHO */
+
+/* -------------------------------------------- COMEÇO CAPA*/
+#capa {
+    height: 15rem;
+    background: url(../img/capa.jpg) no-repeat;
+    background-size: cover;
+    position: relative;
+    opacity: .9;
+}
+
+#titulo{
+    position: absolute;
+    color: white;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+}
+
+#sub-titulo{
+    position: absolute;
+    color: white;
+    top: 55%;
+    width: 100%;
+    text-align: center; 
+}
+
+#capa ul {
+    display: flex;
+    height: 100%;
+    align-content: flex-end;
+    justify-content: space-around;
+}
+
+#capa ul li {
+    display: block;
+    list-style: none;
+    font-size: 3rem;
+    align-self: flex-end;
+}
+
+#capa ul li i {
+    color: white;
+}
+
+li p {
+    font-size: 1rem;
+    align-self: center;
+    margin-left: 10px;
+    color: white;
+    visibility: hidden;
+}
+
+#html, #css, #bootstrap{
+    padding-left: 17px;
+}
+
+#js {
+    padding-left: 25px;
+}
+
+#js:hover + p, #html:hover + p, #css:hover + p, #bootstrap:hover + p{
+    visibility: visible;
+    color: white;
+}
+
+#js:hover {
+    color: #ead41c;
+}
+
+#bootstrap:hover {
+    color: #5e00f5;
+}
+
+#css:hover {
+   /* color: #0538c5;*/
+   color: #0062b0;
+}
+
+#html:hover{
+    color: #dc3d1c;
+}
+/* -------------------------------------------- FIM CAPA */
+
+/* -------------------------------------------- INÍCIO CONTEÚDO */
+
+#principal {
+    background: rgba(47, 42, 48, 0.3);
+    padding-bottom: 30px;
+}
+
+#section-principal {
+    width: 95%;
+    margin: 0 auto;
+}
+
+#section-principal p{
+    background: rgba(255, 255, 255, 0.5);
+    text-align: justify;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: rgba(0,0,0,0.8);
+    line-height: 25px;
+}
+
+#section-principal h2 {
+    background: linear-gradient(180deg, #2f2a30, #554e56);
+    text-align: center;
+    padding: 5px;
+    margin: 10px 0px 10px 0px;
+    color: white;
+}
+
+#section-principal h3 {
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px 5px 0px 0px;
+}
+
+img{
+    display: block;
+    width: 100%;
+}
+.sub-section-1{
+   display: grid;
+   grid-template-columns: repeat(2, minmax(400px, 1fr));
+   grid-gap: 10px;
+   margin-bottom: 50px;
+}
+
+.sub-section-2{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    grid-gap: 10px;
+ }
+
+ .sub1-box1 h3 {
+    background: linear-gradient(135deg, #8844ee, #B07DFB);
+ }
+
+ .sub1-box2 h3 {
+    background: #f7f7f7; 
+    color: rgba(170, 160, 89, 0.8);
+}
+
+.sub1-box2 h3:hover {
+    color: #AAA059;
+}
+
+.sub1-box3 h3 {
+    background: #252317;
+}
+
+.sub1-box4 h3 {
+     background: #294d71;
+}
+
+.sub2-box1 h3 {
+    background: #FEC107;
+}
+
+.sub2-box2 h3 {
+    background: #441340;
+}
+
+
+/* -------------------------------------------- FIM CONTEÚDO */
+
+/* -------------------------------------------- COMEÇO CONTEÚDO SOBRE*/
+.capaSobreMim {
+    padding-top: 20px;
+    background: url(../img/sobre.jpg);
+    height: 110vh; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+    display: grid;
+    grid-template-areas: 
+        "titulo"
+        "conteudo" 
+    ;
+    justify-content: center;
+}
+
+.conteudoSobre{
+    grid-area: conteudo;
+    display: grid;
+    grid-template-areas: 
+        "imagem texto" 
+    ;
+    width: 800px;
+    grid-gap: 20px;
+}
+
+.tituloSobreMim {
+    grid-area: titulo;
+    text-align: center;
+    color: rgba(0,0,0,0.7);
+}
+
+.othonFoto {
+    width: 300px;
+    grid-area: imagem;
+    
+}
+
+.textoSobre{
+    grid-area: texto;
+}
+
+
+.conteudoSobre p{
+    text-align: justify;
+    line-height: 1.5em;
+    color: rgba(0,0,0,0.9);
+    padding: 0px 10px 10px 10px;
+}
+
+
+/* -------------------------------------------- FIM CONTEÚDO SOBRE*/
+
+
+
+/* -------------------------------------------- COMEÇO RODAPÉ */
+.rodape{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background: linear-gradient(180deg, #2f2a30, #554e56);
+    height: 4rem;
+}
+
+.rodape p {
+    color: white;
+    display: block;   
+}
+/* -------------------------------------------- FIM RODAPÉ */
+
+
+
+
+/* -------------------------------------------- RESPONSIVO */
+
+@media (max-width: 567.98px) {
+    /* -------------------------------------------- COMEÇO CABEÇALHO */
+    .cabecalho{
+         height: 2.8rem;
+     } 
+     #btnMobile{
+         display: flex;
+         padding: .5rem 1rem;
+         font-size: 1rem;
+         border: none;
+         background: none;
+         cursor: pointer;
+     }
+ 
+     #hamburguer{
+         color: rgba(255, 255, 255, 0.5);
+         border-top: 2px solid;
+         width: 20px;
+     }
+ 
+     #hamburguer:hover{
+         color: white;
+     }
+ 
+     #hamburguer::after, #hamburguer::before{
+         content: '';
+         display: block;
+         width: 20px;
+         background:currentColor;
+         height: 2px;
+         margin-top: 5px;
+         transition: .3s;
+         position: relative;
+     }
+ 
+     #navPrincipal.active #hamburguer {
+         border-top-color: transparent;
+     }
+ 
+     #navPrincipal.active #hamburguer::before {
+         transform: rotate(135deg);
+     }
+ 
+     #navPrincipal.active #hamburguer::after{
+         transform: rotate(-135deg);
+         top: -7px;
+     }
+
+    .botao {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .cabecalho nav ul {
+        display: none;
+    }
+
+    .icones-svg {
+        display: none;
+    }
+
+    .cabecalho nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    #cabecalho.active {
+        transition: .5s;
+        height: 100vh;
+        z-index: 1000;
+        opacity: 0.9;
+    }
+
+    #cabecalho.active + main{
+        display: none;
+    }
+
+
+    #navPrincipal.active #menu, #navPrincipal.active #menuIcones{
+        display: flex; 
+    }
+
+    #menu, #menuIcones {   
+        position: absolute;
+        right: 0;
+        width: 100%;
+    }
+
+    #menu {
+        top: 15%;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #menu li + li {
+        margin-top: 100px;
+    }
+
+    #menuIcones {
+        top: 90%;
+        justify-content: space-evenly;
+    }
+    /* -------------------------------------------- FIM CABEÇALHO */
+
+    /* -------------------------------------------- COMEÇO CAPA */
+    #capa ul li {
+        display: block;
+        list-style: none;
+        font-size: 2.5rem;
+        align-self: flex-end;
+    }
+
+    li p {
+        font-size: 0.6rem;
+        color: white;
+        margin-left: 0px;
+    }
+
+    #css, #html, #bootstrap {
+        padding-left: 0px;
+    }
+
+    #js{
+        padding-left: 4px;
+    }
+    
+    #sub-titulo{
+        font-size: 0.8rem;
+    }
+    /* -------------------------------------------- FIM CAPA */
+
+    /* -------------------------------------------- COMEÇO CONTEÚDO */
+    #section-principal {
+        width: 100%;
+    }
+    .sub-section-1{
+        grid-template-columns: repeat(4, 95%);
+        position: relative;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+     }
+     
+     .sub-section-2{
+        grid-template-columns: repeat(2, 95%);
+        position: relative;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+      }
+    /* -------------------------------------------- FIM CONTEÚDO */
+    
+    /* -------------------------------------------- COMEÇO CONTEÚDO SOBRE*/
+    
+    .capaSobreMim {
+        height: 100%;
+    }
+    .conteudoSobre{
+        grid-template-areas: 
+            "texto"
+            "imagem"   
+        ;
+        width: 350px;
+    }
+
+    .othonFoto {
+        width: 350px;
+    }
+
+    .conteudoSobre p{
+        text-align: justify;
+        line-height: 1.2em;
+        color: rgba(0,0,0,0.9);
+        padding: 0px 10px 10px 10px;  
+    }
+
+    /* -------------------------------------------- FIM CONTEÚDO SOBRE*/
+
+    /* -------------------------------------------- COMEÇO RODAPÉ */
+    #principal.active + footer {
+        display: none;
+    }
+
+    footer {
+       height: 14vh;
+    }
+    /* -------------------------------------------- FIM RODAPÉ */
+}
+
+@media (min-width: 568px) and (max-width: 850px) {
+    /* -------------------------------------------- COMEÇO CABEÇALHO */
+    .cabecalho{
+         height: 2.8rem;
+     } 
+     #btnMobile{
+         display: flex;
+         padding: .5rem 1rem;
+         font-size: 1rem;
+         border: none;
+         background: none;
+         cursor: pointer;
+     }
+ 
+     #hamburguer{
+         color: rgba(255, 255, 255, 0.5);
+         border-top: 2px solid;
+         width: 20px;
+     }
+ 
+     #hamburguer:hover{
+         color: white;
+     }
+ 
+     #hamburguer::after, #hamburguer::before{
+         content: '';
+         display: block;
+         width: 20px;
+         background:currentColor;
+         height: 2px;
+         margin-top: 5px;
+         transition: .3s;
+         position: relative;
+     }
+ 
+     #navPrincipal.active #hamburguer {
+         border-top-color: transparent;
+     }
+ 
+     #navPrincipal.active #hamburguer::before {
+         transform: rotate(135deg);
+     }
+ 
+     #navPrincipal.active #hamburguer::after{
+         transform: rotate(-135deg);
+         top: -7px;
+     }
+
+    .botao {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .cabecalho nav ul {
+        display: none;
+    }
+
+    .icones-svg {
+        display: none;
+    }
+
+    .cabecalho nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    #cabecalho.active {
+        transition: .5s;
+        height: 100vh;
+        z-index: 1000;
+        opacity: 0.9;
+    }
+
+    #cabecalho.active + main{
+        display: none;
+    }
+
+
+    #navPrincipal.active #menu, #navPrincipal.active #menuIcones{
+        display: flex; 
+    }
+
+    #menu, #menuIcones {   
+        position: absolute;
+        right: 0;
+        width: 100%;
+    }
+
+    #menu {
+        top: 15%;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #menu li + li {
+        margin-top: 47px;
+    }
+
+    #menuIcones {
+        top: 90%;
+        justify-content: space-evenly;
+    }
+    /* -------------------------------------------- FIM CABEÇALHO */
+
+    /* -------------------------------------------- COMEÇO CAPA*/
+    #capa ul li {
+        display: block;
+        list-style: none;
+        font-size: 2.5rem;
+        align-self: flex-end;
+    }
+
+    li p {
+        font-size: 0.6rem;
+        color: white;
+        margin-left: 0px;
+    }
+
+    #css, #html, #bootstrap {
+        padding-left: 0px;
+    }
+
+    #js{
+        padding-left: 4px;
+    }
+    
+    #sub-titulo{
+        font-size: 0.8rem;
+    }
+    /* -------------------------------------------- FIM CAPA */
+
+    /* -------------------------------------------- COMEÇO CONTEÚDO */
+    #section-principal {
+        width: 100%;
+    }
+
+    .sub-section-1{
+        grid-template-columns: repeat(2, calc(50% - 5px));
+        position: relative;
+     }
+     
+     .sub-section-2{
+        grid-template-columns: repeat(2, calc(50% - 5px));
+        position: relative;
+      }
+    /* -------------------------------------------- FIM CONTEÚDO */
+    
+     /* -------------------------------------------- COMEÇO CONTEÚDO SOBRE*/
+    
+    
+    .othonFoto {
+        width: 215px;
+    }
+    
+
+    .conteudoSobre{
+        width: 565px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+             
+    }
+    
+    .conteudoSobre p{
+        line-height: 1.1em;
+    }
+
+    /* -------------------------------------------- FIM CONTEÚDO SOBRE*/
+
+
+    /* -------------------------------------------- COMEÇO RODAPÉ */
+    #principal.active + footer {
+        display: none;
+    }
+
+    footer {
+       height: 14vh;
+    }
+    /* --------------------------------------------FIM RODAPÉ */
+}
