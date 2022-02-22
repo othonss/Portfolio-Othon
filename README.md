@@ -16,7 +16,7 @@
 Pode ser acessado através do link: 
 
 ```bash
-  othonss.github.io/portfolio-othon/
+  othonss.github.io/Portfolio-Othon/
 ```
 
 ## Layout web
