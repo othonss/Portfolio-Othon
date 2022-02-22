@@ -35,13 +35,13 @@ Pode ser acessado através do link:
 
 ### Tela inicial 
 
-<div style="display: flex; grid-gap 10px;">
+<div style="display: flex;">
   <img src="layout/tela_inicial_mob2.jpg" width="300" />
   <img src="layout/tela_inicial_mob.jpg" width="300"  />
 </div>
 
 ### Tela sobre
-<div style="display: flex; grid-gap 10px;">
+<div style="display: flex;">
   <img src="layout/tela_sobre_mob1.jpg" width="300" height="513"/>
   <img src="layout/tela_sobre_mob2.jpg" width="300" height="513"/>
 </div>
